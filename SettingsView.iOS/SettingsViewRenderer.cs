@@ -478,8 +478,11 @@ namespace AiForms.Renderers.iOS
 
                 view.RemoveFromSuperview();
             }
-                
-            view.Dispose();
+
+            if(!(view is INativeElementView))
+            {
+                view.Dispose();
+            }
         }
 
         /// <summary>
